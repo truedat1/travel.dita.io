@@ -1,0 +1,12 @@
+/* humanstxt.org */
+
+/* TEAM */
+	Developer/Designer: Alexander J. Dita
+	Twitter: @alexanderjdita
+	From: California, USA
+
+/* SITE */
+  Standards: HTML5, CSS3
+  Frameworks: jekyll, foundation
+  Components: jQuery, modernizr
+  Software: Git, sublime text 2, vim

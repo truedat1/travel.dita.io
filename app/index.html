@@ -1,0 +1,49 @@
+---
+layout: default 
+title: Travel blog 
+description: Pictures and descriptions from travels 
+sitemap: 
+    priority: 0.7 
+    changefreq: monthly 
+    lastmod: 2014-10-28T12:49:30-07:00 
+---
+
+<div class="row" id="home">
+	<div class="columns large-12">
+		<h2 class="hide">Articles</h2>
+		<div class="row">
+
+	  	{% for post in site.posts %}
+	  		<div>
+		  		<a href="{{ post.url }}" alt="{{ post.title }}">
+		  			{% if post.img %}
+		  				<div class="columns large-4 medium-6 home-post" style="background-image:url({{ site.static }}/img/small-{{ post.img }})">
+		  			{% elsif post.slide1 %}
+		  				<div class="columns large-4 medium-6 home-post" style="background-image:url({{ site.static }}/img/small-{{ post.slide1 }})">
+		  			{% else %}
+		  				<div class="columns large-4 medium-6 home-post">
+		  			{% endif %}
+			  			<ul class="no-bullet">
+			  				<li><h3>{{ post.title }}</h3></li>
+			  				<li><em>{{ post.date | date: '%B %d, %Y' }}</em></li>
+			  				{% if post.description %}
+			  					<li>{{ post.description }}</li>
+		  					{% endif %}
+			  			</ul>
+		  			</div>
+		  		</a>
+		  	</div>
+	    {% endfor %}
+	    	
+	  		<a href="/about">
+	  			<div class="columns large-4 medium-6 home-post end" style="background-image:url({{ site.static }}/img/small-about.jpg)">
+		  			<ul class="no-bullet">
+		  				<li><h3>about</h3></li>
+		  				<li>all of your questions, some answers</li>
+		  			</ul>
+	  			</div>
+	  		</a>
+
+	    </div>
+	</div>
+</div>

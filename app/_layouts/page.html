@@ -1,0 +1,16 @@
+---
+layout: default
+---
+
+<img data-interchange="[{{ site.static }}/img/small-{{ page.img }}, (default)],  [{{ site.static }}/img/medium-{{ page.img }}, (medium)], [{{ site.static }}/img/full-{{ page.img }}, (large)],">
+<div class="row">
+	<div class="medium-offset-2 medium-8 large-offset-3 large-6 columns">
+		<h2>{{ page.title }}</h2>
+
+		<div class="page">
+		{{ content }}
+		</div>
+	</div>
+	<div class="large-3 medium-2 columns">
+	</div>
+</div>

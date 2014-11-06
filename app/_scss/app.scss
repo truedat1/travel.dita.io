@@ -1,0 +1,117 @@
+// Import Calls
+@import 'normalize';
+@import 'settings';
+@import 'foundationcalls';
+@import 'browserdetection';
+@import 'syntax';
+
+// Custom CSS
+
+div#home {
+    background-color: $monsoon; 
+	p {
+		text-align: justify;
+	}
+	div.row {
+		margin-left: 0;
+		margin-right: 0;
+		padding-left: 0;
+		padding-right: 0;
+	}
+	div.columns {
+		padding-left: 0;
+		padding-right: 0;
+	}
+	div.home-post {
+		background-repeat: no-repeat; 
+		background-size: 100%;
+		height: rem_calc(230);
+        -webkit-transition-duration: 0.5s;
+        -moz-transition-duration: 0.5s;
+        -o-transition-duration: 0.5s;    
+        &:hover {
+            background-size: 105%;
+            background-position-x: rem_calc(-7);
+        }
+	}
+	ul {
+		background-color: rgba(0,0,0,0.5);
+		padding: 0 rem_calc(15);
+		margin-top: rem_calc(70);
+		margin-bottom: rem_calc(30);
+	}
+	li, h3 {
+		color: white;
+	}
+	h3 {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+	p {
+		font-size: rem_calc(12);
+	}
+}
+div.post,
+div.page {
+	p {
+		text-align: justify;
+	}
+}
+.top-bar-section .dropdown li a {
+	text-transform: lowercase;
+}
+div.post-section {
+    padding-top: rem_calc(20);
+}
+
+footer {
+    background-color: $oil; 
+    p {
+        color: white;
+        padding-top: 20px;
+        font-size: 14px;
+    }
+}
+
+nav.top-bar {
+    li.name h1 a {
+        display: inline;
+        em {
+            color: lighten($oil, 15%)
+        }
+    }
+}
+
+// Media Queries
+
+// Small screens 
+
+@media only screen { } /* Define mobile styles */ 
+
+@media only screen and (max-width: 40em) {
+    div.post-section p.meta {
+        font-size: 13px;
+    }
+} /* max-width 640px, mobile-only styles, use when QAing mobile issues */ 
+
+// Medium screens 
+
+@media only screen and (min-width: 40.063em) { } /* min-width 641px, medium screens */ 
+
+@media only screen and (min-width: 40.063em) and (max-width: 64em) { } /* min-width 641px and max-width 1024px, use when QAing tablet-only issues */ 
+
+// Large screens 
+
+@media only screen and (min-width: 64.063em) { } /* min-width 1025px, large screens */ 
+
+@media only screen and (min-width: 64.063em) and (max-width: 90em) { } /* min-width 1025px and max-width 1440px, use when QAing large screen-only issues */ 
+
+// XLarge screens 
+
+@media only screen and (min-width: 90.063em) { } /* min-width 1441px, xlarge screens */ 
+
+@media only screen and (min-width: 90.063em) and (max-width: 120em) { } /* min-width 1441px and max-width 1920px, use when QAing xlarge screen-only issues */ 
+
+// XXLarge screens 
+
+@media only screen and (min-width: 120.063em) { } /* min-width 1921px, xxlarge screens */

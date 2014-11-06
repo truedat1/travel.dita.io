@@ -1,0 +1,74 @@
+---
+layout: default
+---
+
+{% if page.img %}
+	<img data-interchange="[ {{ site.static }}/img/small-{{ page.img }} , (default)],  [ {{ site.static }}/img/medium-{{ page.img }} , (medium)], [ {{ site.static }}/img/full-{{ page.img }} , (large)],">
+{% endif %}
+
+{% if page.slide1 %}
+
+    <ul class="orbit-slideshow" data-orbit>
+		{% if page.slide1 %}
+		  	<li>
+			    <img data-interchange="[ {{ site.static }}/img/small-{{ page.slide1 }} , (default)],  [ {{ site.static }}/img/medium-{{ page.slide1 }} , (medium)], [ {{ site.static }}/img/full-{{ page.slide1 }} , (large)]," alt="slide 1" />
+			    {% if page.slide1caption %}
+			    	<div class="orbit-caption">
+			    	  {{ page.slide1caption }}
+			    	</div>
+			    {% endif %}
+		  	</li>
+		{% endif %}
+	    {% if page.slide2 %}
+		  	<li>
+			    <img data-interchange="[ {{ site.static }}/img/small-{{ page.slide2 }} , (default)],  [ {{ site.static }}/img/medium-{{ page.slide2 }} , (medium)], [ {{ site.static }}/img/full-{{ page.slide2 }} , (large)]," alt="slide 2" />
+			    {% if page.slide2caption %}
+			    	<div class="orbit-caption">
+			    	  {{ page.slide2caption }}
+			    	</div>
+			    {% endif %}
+		  	</li>
+		{% endif %}
+        {% if page.slide3 %}
+		  	<li>
+			    <img data-interchange="[ {{ site.static }}/img/small-{{ page.slide3 }} , (default)],  [ {{ site.static }}/img/medium-{{ page.slide3 }} , (medium)], [ {{ site.static }}/img/full-{{ page.slide3 }} , (large)]," alt="slide 1" />
+			    {% if page.slide3caption %}
+			    	<div class="orbit-caption">
+			    	  {{ page.slide3caption }}
+			    	</div>
+			    {% endif %}
+		  	</li>
+		{% endif %}
+		
+    </ul>
+
+
+{% endif %}
+
+<div class="row">
+	<div class="post-section medium-offset-2 medium-8 large-offset-3 large-6 columns">
+		<h2>{{ page.title }}</h2>
+        <p class="meta"><em>{{ page.date | date: '%B %d, %Y' }}</em></p>
+
+		<div class="post text-justified">
+		{{ content }}
+		</div>
+		
+		<div class="row text-center">
+			<div class="large-12 columns">
+				{% if page.previous %} 
+                <a class="button left" rel="prev" href="{{ site.url }}{{ page.previous.url }}">&larr;  Older</a>
+			    {% endif %}
+			    {% if page.next %} 
+                <a class="button right" rel="next" href="{{ site.url }}{{ page.next.url }}">Newer  &rarr;</a>
+			    {% endif %}
+			</div>
+	    </div>
+
+		<div class="post-comments">
+			{% include comments.html %}
+		</div>
+	</div>
+	<div class="medium-2 large-3 columns">
+	</columns>
+</div>
